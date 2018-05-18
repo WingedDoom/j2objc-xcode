@@ -73,6 +73,7 @@
 		5238F55520AEEC6C00ECE572 /* LibConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LibConfig.xcconfig; sourceTree = "<group>"; };
 		5238F55620AEED3E00ECE572 /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
 		5238F56220AEF4A500ECE572 /* J2ObjC-quadratic-equations-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "J2ObjC-quadratic-equations-Bridging-Header.h"; sourceTree = "<group>"; };
+		5238F56620AF0D9900ECE572 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +98,7 @@
 		5238F52420AEE0C500ECE572 = {
 			isa = PBXGroup;
 			children = (
+				5238F56620AF0D9900ECE572 /* README.md */,
 				5238F54220AEE0FE00ECE572 /* JavaModels */,
 				5238F52F20AEE0C600ECE572 /* J2ObjC-quadratic-equations */,
 				5238F54F20AEEC2100ECE572 /* java-models */,
