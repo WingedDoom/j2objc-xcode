@@ -4,7 +4,7 @@ This is an example of how J2ObjC can be used with Xcode projects, and a step by 
 # Assumtions
 This tutorial assumes following conditions:
 - You have latest Xcode installed (tested on Xcode 9)
-- You have downloaded J2ObjC (tested on version 2.0.5). You can find a complete guide [https://developers.google.com/j2objc/guides/getting-started](here).
+- You have downloaded J2ObjC (tested on version 2.0.5). You can find a complete guide [here](https://developers.google.com/j2objc/guides/getting-started).
   - The example project assumes you have the J2ObjC folder stored at ~/j2objc-dist
 
 # Tutorial
@@ -36,7 +36,7 @@ We now add LibConfig.xcconfig to static lib target and AppConfig.xcconfig to app
 
 ![](screenshots/scn3.png)
 
-Once you have the files added, copy the content of xcconfig in the sample project into them. The only things you need to modify are `J2OBJC_HOME` and `JAVA_SOURCE_PATH`. Set `J2OBJC_HOME` to your J2ObjC path. Set `JAVA_SOURCE_PATH` to the root folder of your java source path. You can read more about properly setting Java source and J2ObjC paths [https://developers.google.com/j2objc/guides/xcode-build-rules](here).
+Once you have the files added, copy the content of xcconfig in the sample project into them. The only things you need to modify are `J2OBJC_HOME` and `JAVA_SOURCE_PATH`. Set `J2OBJC_HOME` to your J2ObjC path. Set `JAVA_SOURCE_PATH` to the root folder of your java source path. You can read more about properly setting Java source and J2ObjC paths [here](https://developers.google.com/j2objc/guides/xcode-build-rules).
 
 Adding the files to the project doesn't make them effective. To use them, set them in the project settings.
 
@@ -44,13 +44,13 @@ Adding the files to the project doesn't make them effective. To use them, set th
 
 As mentioned earlier, we need to turn off ARC on the static lib. Having ARC on could cause your program an order of magnitude slower than it would with ARC off. Also it seems that J2ObjC is more stable with ARC turned off. Since j2objc is writing the code for us, turning ARC off is nothing but benefit. The ARC flagged (`CLANG_ENABLE_OBJC_ARC`) in turned off by LibConfig.xcconfig for you.
 
-J2ObjC requires some linker flags to be present in `OTHER_LDFLAGS`. You can read more on that [https://developers.google.com/j2objc/guides/required-link-flags](here).
+J2ObjC requires some linker flags to be present in `OTHER_LDFLAGS`. You can read more on that [here](https://developers.google.com/j2objc/guides/required-link-flags).
 
 ### Note on using CocoaPods
-If you plan to use CocoaPods please note that it creates its own project configurations. Don't forget to import them in your custom AppConfig.xcconfig file. Also, some CocoaPods pods require `-ObjC` linker flag, which may break your J2ObjC static library on linking phase. In that case consider using `-force_load` linker flag. You can read more about that [https://developer.apple.com/library/content/qa/qa1490/_index.html](here) and [https://developers.google.com/j2objc/guides/required-link-flags#the_-objc_link_flag](here). It is recommended to switch to Carthage, as it doesn't affect your project as CocoaPods does.
+If you plan to use CocoaPods please note that it creates its own project configurations. Don't forget to import them in your custom AppConfig.xcconfig file. Also, some CocoaPods pods require `-ObjC` linker flag, which may break your J2ObjC static library on linking phase. In that case consider using `-force_load` linker flag. You can read more about that [here](https://developer.apple.com/library/content/qa/qa1490/_index.html) and [here](https://developers.google.com/j2objc/guides/required-link-flags#the_-objc_link_flag). It is recommended to switch to Carthage, as it doesn't affect your project as CocoaPods does.
 
 ## Add a build rule for Java sources
-Now you need to let the Xcode know how to process Java sources. To do that, you need to create a Build Rule which consists of a .sh script, that calls j2objc utility with Java sources as its input parameters to produce ObjC sources, that Xcode is able to build into a static library. The build rule uses constants we've set to target configurations in previous steps, so be careful that those constants are set properly. You can read more about J2ObjC Xcode build rule [https://developers.google.com/j2objc/guides/xcode-build-rules](here).
+Now you need to let the Xcode know how to process Java sources. To do that, you need to create a Build Rule which consists of a .sh script, that calls j2objc utility with Java sources as its input parameters to produce ObjC sources, that Xcode is able to build into a static library. The build rule uses constants we've set to target configurations in previous steps, so be careful that those constants are set properly. You can read more about J2ObjC Xcode build rule [here](https://developers.google.com/j2objc/guides/xcode-build-rules).
 
 ![](screenshots/scn7.png)
 
