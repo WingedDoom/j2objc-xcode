@@ -23,12 +23,12 @@ class ViewController: UIViewController {
         
         let equation = QEEquation(double: a, with: b, with: c)!
         
-        guard equation.isSolvable() else {
+        guard let solution = equation.solve() else {
             answerLabel.text = "The equation has no roots"
             return
         }
         
-        answerLabel.text = equation.solve().description__()
+        answerLabel.text = solution.description__()
     }
     
     @IBAction func didChangeInput(_ sender: UITextField) {

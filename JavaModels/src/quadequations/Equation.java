@@ -26,6 +26,10 @@ public class Equation {
         return calculateDiscriminant() >= 0;
     }
 
+    /**
+     * Solves the equation.
+     * @return null if the quadratic equation is not solvable, Solution instance otherwise.
+     */
     public Solution solve() {
         if (!isSolvable()) return null;
         if (coeffB == 0 && coeffA == 0) return new AnySolution();
