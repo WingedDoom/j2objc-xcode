@@ -1,7 +1,7 @@
 # Using J2ObjC with Xcode tutorial
 This is an example of how J2ObjC can be used with Xcode projects, and a step by step tutorial for it. In a nutshell, it suggests adding Java files into a separate static library target of an existing Xcode project. This way it is possible to avoid Objective-C generated classes' naming problems, get better debugging tools and turn off ARC in a separate target.
 
-# Assumtions
+# Assumptions
 This tutorial assumes following conditions:
 - You have latest Xcode installed (tested on Xcode 9)
 - You have downloaded J2ObjC (tested on version 2.0.5). You can find a complete guide [here](https://developers.google.com/j2objc/guides/getting-started).
