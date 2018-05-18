@@ -12,7 +12,49 @@
 		5238F53620AEE0C600ECE572 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5238F53420AEE0C600ECE572 /* Main.storyboard */; };
 		5238F53820AEE0CC00ECE572 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5238F53720AEE0CC00ECE572 /* Assets.xcassets */; };
 		5238F53B20AEE0CC00ECE572 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5238F53920AEE0CC00ECE572 /* LaunchScreen.storyboard */; };
+		5238F55920AEEDE300ECE572 /* Main.java in Sources */ = {isa = PBXBuildFile; fileRef = 5238F54420AEEBE000ECE572 /* Main.java */; };
+		5238F55A20AEEDE300ECE572 /* Solution.java in Sources */ = {isa = PBXBuildFile; fileRef = 5238F54620AEEBE000ECE572 /* Solution.java */; };
+		5238F55B20AEEDE300ECE572 /* NormalSolution.java in Sources */ = {isa = PBXBuildFile; fileRef = 5238F54720AEEBE000ECE572 /* NormalSolution.java */; };
+		5238F55C20AEEDE300ECE572 /* Equation.java in Sources */ = {isa = PBXBuildFile; fileRef = 5238F54820AEEBE000ECE572 /* Equation.java */; };
+		5238F55D20AEEDE300ECE572 /* AnySolution.java in Sources */ = {isa = PBXBuildFile; fileRef = 5238F54920AEEBE000ECE572 /* AnySolution.java */; };
+		5238F56120AEF47700ECE572 /* libjava-models.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5238F54E20AEEC2100ECE572 /* libjava-models.a */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		5238F55820AEED8600ECE572 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.java;
+			isEditable = 1;
+			outputFiles = (
+				"$(GENERATED_LIBS_DIR)/${INPUT_FILE_BASE}.h",
+				"$(GENERATED_LIBS_DIR)/${INPUT_FILE_BASE}.m",
+			);
+			script = "if [ ! -f \"${J2OBJC_HOME}/j2objc\" ]; then echo \"J2OBJC_HOME is not correctly defined, currently set to '${J2OBJC_HOME}'\"; exit 1; fi;\n\"${J2OBJC_HOME}/j2objc\" -d ${GENERATED_LIBS_DIR} -sourcepath \"${JAVA_SOURCE_PATH}\" --prefix java.utils=JU --prefix 'quadequations.*=QE' --no-package-directories -g ${INPUT_FILE_PATH};";
+		};
+/* End PBXBuildRule section */
+
+/* Begin PBXContainerItemProxy section */
+		5238F55E20AEF47100ECE572 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5238F52520AEE0C500ECE572 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5238F54D20AEEC2100ECE572;
+			remoteInfo = "java-models";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5238F54C20AEEC2100ECE572 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		5238F52D20AEE0C600ECE572 /* J2ObjC-quadratic-equations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "J2ObjC-quadratic-equations.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +64,27 @@
 		5238F53720AEE0CC00ECE572 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5238F53A20AEE0CC00ECE572 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5238F53C20AEE0CC00ECE572 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5238F54420AEEBE000ECE572 /* Main.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = Main.java; sourceTree = "<group>"; };
+		5238F54620AEEBE000ECE572 /* Solution.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = Solution.java; sourceTree = "<group>"; };
+		5238F54720AEEBE000ECE572 /* NormalSolution.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = NormalSolution.java; sourceTree = "<group>"; };
+		5238F54820AEEBE000ECE572 /* Equation.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = Equation.java; sourceTree = "<group>"; };
+		5238F54920AEEBE000ECE572 /* AnySolution.java */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.java; path = AnySolution.java; sourceTree = "<group>"; };
+		5238F54E20AEEC2100ECE572 /* libjava-models.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libjava-models.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5238F55520AEEC6C00ECE572 /* LibConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = LibConfig.xcconfig; sourceTree = "<group>"; };
+		5238F55620AEED3E00ECE572 /* AppConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = AppConfig.xcconfig; sourceTree = "<group>"; };
+		5238F56220AEF4A500ECE572 /* J2ObjC-quadratic-equations-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "J2ObjC-quadratic-equations-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		5238F52A20AEE0C600ECE572 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5238F56120AEF47700ECE572 /* libjava-models.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5238F54B20AEEC2100ECE572 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,8 +97,11 @@
 		5238F52420AEE0C500ECE572 = {
 			isa = PBXGroup;
 			children = (
+				5238F54220AEE0FE00ECE572 /* JavaModels */,
 				5238F52F20AEE0C600ECE572 /* J2ObjC-quadratic-equations */,
+				5238F54F20AEEC2100ECE572 /* java-models */,
 				5238F52E20AEE0C600ECE572 /* Products */,
+				5238F56020AEF47700ECE572 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -47,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				5238F52D20AEE0C600ECE572 /* J2ObjC-quadratic-equations.app */,
+				5238F54E20AEEC2100ECE572 /* libjava-models.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -60,8 +123,53 @@
 				5238F53720AEE0CC00ECE572 /* Assets.xcassets */,
 				5238F53920AEE0CC00ECE572 /* LaunchScreen.storyboard */,
 				5238F53C20AEE0CC00ECE572 /* Info.plist */,
+				5238F55620AEED3E00ECE572 /* AppConfig.xcconfig */,
+				5238F56220AEF4A500ECE572 /* J2ObjC-quadratic-equations-Bridging-Header.h */,
 			);
 			path = "J2ObjC-quadratic-equations";
+			sourceTree = "<group>";
+		};
+		5238F54220AEE0FE00ECE572 /* JavaModels */ = {
+			isa = PBXGroup;
+			children = (
+				5238F54320AEEBE000ECE572 /* src */,
+			);
+			path = JavaModels;
+			sourceTree = "<group>";
+		};
+		5238F54320AEEBE000ECE572 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				5238F54420AEEBE000ECE572 /* Main.java */,
+				5238F54520AEEBE000ECE572 /* quadequations */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		5238F54520AEEBE000ECE572 /* quadequations */ = {
+			isa = PBXGroup;
+			children = (
+				5238F54620AEEBE000ECE572 /* Solution.java */,
+				5238F54720AEEBE000ECE572 /* NormalSolution.java */,
+				5238F54820AEEBE000ECE572 /* Equation.java */,
+				5238F54920AEEBE000ECE572 /* AnySolution.java */,
+			);
+			path = quadequations;
+			sourceTree = "<group>";
+		};
+		5238F54F20AEEC2100ECE572 /* java-models */ = {
+			isa = PBXGroup;
+			children = (
+				5238F55520AEEC6C00ECE572 /* LibConfig.xcconfig */,
+			);
+			path = "java-models";
+			sourceTree = "<group>";
+		};
+		5238F56020AEF47700ECE572 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,11 +186,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				5238F55F20AEF47100ECE572 /* PBXTargetDependency */,
 			);
 			name = "J2ObjC-quadratic-equations";
 			productName = "J2ObjC-quadratic-equations";
 			productReference = 5238F52D20AEE0C600ECE572 /* J2ObjC-quadratic-equations.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5238F54D20AEEC2100ECE572 /* java-models */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5238F55220AEEC2100ECE572 /* Build configuration list for PBXNativeTarget "java-models" */;
+			buildPhases = (
+				5238F54A20AEEC2100ECE572 /* Sources */,
+				5238F54B20AEEC2100ECE572 /* Frameworks */,
+				5238F54C20AEEC2100ECE572 /* CopyFiles */,
+			);
+			buildRules = (
+				5238F55820AEED8600ECE572 /* PBXBuildRule */,
+			);
+			dependencies = (
+			);
+			name = "java-models";
+			productName = "java-models";
+			productReference = 5238F54E20AEEC2100ECE572 /* libjava-models.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -95,6 +222,10 @@
 				ORGANIZATIONNAME = "Bulat Khabirov";
 				TargetAttributes = {
 					5238F52C20AEE0C600ECE572 = {
+						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
+					};
+					5238F54D20AEEC2100ECE572 = {
 						CreatedOnToolsVersion = 9.3.1;
 					};
 				};
@@ -113,6 +244,7 @@
 			projectRoot = "";
 			targets = (
 				5238F52C20AEE0C600ECE572 /* J2ObjC-quadratic-equations */,
+				5238F54D20AEEC2100ECE572 /* java-models */,
 			);
 		};
 /* End PBXProject section */
@@ -140,7 +272,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5238F54A20AEEC2100ECE572 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5238F55920AEEDE300ECE572 /* Main.java in Sources */,
+				5238F55A20AEEDE300ECE572 /* Solution.java in Sources */,
+				5238F55B20AEEDE300ECE572 /* NormalSolution.java in Sources */,
+				5238F55C20AEEDE300ECE572 /* Equation.java in Sources */,
+				5238F55D20AEEDE300ECE572 /* AnySolution.java in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5238F55F20AEF47100ECE572 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5238F54D20AEEC2100ECE572 /* java-models */;
+			targetProxy = 5238F55E20AEF47100ECE572 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		5238F53420AEE0C600ECE572 /* Main.storyboard */ = {
@@ -278,8 +430,10 @@
 		};
 		5238F54020AEE0CC00ECE572 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5238F55620AEED3E00ECE572 /* AppConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 573CMG87Y9;
 				INFOPLIST_FILE = "J2ObjC-quadratic-equations/Info.plist";
@@ -289,6 +443,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "BK.J2ObjC-quadratic-equations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "J2ObjC-quadratic-equations/J2ObjC-quadratic-equations-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -296,8 +452,10 @@
 		};
 		5238F54120AEE0CC00ECE572 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5238F55620AEED3E00ECE572 /* AppConfig.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 573CMG87Y9;
 				INFOPLIST_FILE = "J2ObjC-quadratic-equations/Info.plist";
@@ -307,6 +465,35 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "BK.J2ObjC-quadratic-equations";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "J2ObjC-quadratic-equations/J2ObjC-quadratic-equations-Bridging-Header.h";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5238F55320AEEC2100ECE572 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5238F55520AEEC6C00ECE572 /* LibConfig.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573CMG87Y9;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5238F55420AEEC2100ECE572 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5238F55520AEEC6C00ECE572 /* LibConfig.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 573CMG87Y9;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -329,6 +516,15 @@
 			buildConfigurations = (
 				5238F54020AEE0CC00ECE572 /* Debug */,
 				5238F54120AEE0CC00ECE572 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5238F55220AEEC2100ECE572 /* Build configuration list for PBXNativeTarget "java-models" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5238F55320AEEC2100ECE572 /* Debug */,
+				5238F55420AEEC2100ECE572 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

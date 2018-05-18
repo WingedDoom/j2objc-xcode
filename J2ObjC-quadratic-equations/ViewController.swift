@@ -9,17 +9,49 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var aField: UITextField!
+    @IBOutlet weak var bField: UITextField!
+    @IBOutlet weak var cField: UITextField!
+    @IBOutlet weak var answerLabel: UILabel!
+    
+    var a: Double?
+    var b: Double?
+    var c: Double?
+    
+    @IBAction func didTapSolveButton(_ sender: UIBarButtonItem) {
+        guard let a = a, let b = b, let c = c else { return }
+        
+        let equation = QEEquation(double: a, with: b, with: c)!
+        
+        guard equation.isSolvable() else {
+            answerLabel.text = "The equation has no roots"
+            return
+        }
+        
+        answerLabel.text = equation.solve().description__()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    @IBAction func didChangeInput(_ sender: UITextField) {
+        guard let text = sender.text else { return }
+        
+        let input = Double(text)
+        
+        switch sender {
+        case aField:
+            a = input
+        case bField:
+            b = input
+        case cField:
+            c = input
+        default:
+            break
+        }
+        
+        if a != nil, b != nil, c != nil {
+            answerLabel.text = "Tap \"Solve\" to get the solution"
+        } else {
+            answerLabel.text = "Waiting for inputs"
+        }
     }
-
-
 }
 

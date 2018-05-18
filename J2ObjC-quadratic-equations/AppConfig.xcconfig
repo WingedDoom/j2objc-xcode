@@ -1,0 +1,19 @@
+//
+//  AppConfig.xcconfig
+//  J2ObjC-quadratic-equations
+//
+//  Created by Bulat Khabirov on 18.05.2018.
+//  Copyright © 2018 Bulat Khabirov. All rights reserved.
+//
+
+// Put your local path of the j2objc utility here
+J2OBJC_HOME = ${HOME}/j2objc-dist;
+
+// Put the path to the folder where you want the generated ObjC files to be stored
+GENERATED_LIBS_DIR = ${SRCROOT}/Generated/JavaLibs;
+
+HEADER_SEARCH_PATHS = $(inherited) "${J2OBJC_HOME}/include" "${GENERATED_LIBS_DIR}" "${SRCROOT}";
+LIBRARY_SEARCH_PATHS = $(inherited) "${J2OBJC_HOME}/lib";
+
+// Necessary linker flags, read more at https://j2objc.org
+OTHER_LDFLAGS = $(inherited) -l"jre_emul" -l"iconv" -l"z"
